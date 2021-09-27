@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: $primary_font_family;
     font-size: $standard_font_size_sm;
     font-weight: $regular_font_weight;
     background-color: $light_background_color;
@@ -52,4 +52,9 @@ ul {
 
 img {
     display: block;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
 }

@@ -1,0 +1,246 @@
+$slider_image_height_sm: 575px;
+$image_height_md: 425px;
+$image_height_xl: 500px;
+
+$compare_images_width_md: 350px;
+$compare_images_width_xl: 460px;
+
+// Hide rest of the watermark text
+body {
+    overflow-x: hidden;
+}
+
+.intro {
+    @include min-width-md {
+        position: relative; // For the watermark text's positioning
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 25px $content_padding_md;
+        margin-bottom: 30px;
+    }
+
+    @include min-width-xl {
+        gap: 75px;
+        max-width: $max_content_width_xl;
+        padding: 0 $content_padding_xl;
+        margin: auto;
+        margin-bottom: 70px;
+    }
+}
+
+.compare-images {
+    // When draging the bar in the middle don't select the images
+    user-select: none;
+
+    @include min-width-md {
+        flex-shrink: 0;
+        position: relative;
+        width: $compare_images_width_md;
+        padding-top: 25px;
+    }
+
+    @include min-width-xl {
+        width: $compare_images_width_xl;
+        padding-top: 40px;
+    }
+}
+
+.compare-images__text,
+.compare-images__background {
+    display: none;
+
+    @include min-width-md {
+        display: block;
+    }
+}
+
+.compare-images__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform: rotate(90deg) translate(-13px, -50%);
+
+    @include min-width-xl {
+        transform: rotate(90deg) translate(-17px, -50%);
+    }
+}
+
+.compare-images__background {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    width: 80%;
+    height: $image_height_md;
+    background-color: $primary_accent_color;
+
+    @include min-width-xl {
+        left: 40px;
+        height: $image_height_xl;
+    }
+}
+
+.compare-images__slider {
+    position: relative;
+    width: 100%;
+    height: $slider_image_height_sm;
+    overflow: hidden;
+
+    @include min-width-md {
+        width: $compare_images_width_md - 60px;
+        margin-left: auto;
+        height: $image_height_md;
+    }
+
+    @include min-width-xl {
+        height: $image_height_xl;
+        width: $compare_images_width_xl - 80px;
+    }
+}
+
+.slider__original,
+.slider__modified {
+    pointer-events: none;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 100%;
+        height: $slider_image_height_sm;
+        object-fit: cover;
+
+        @include min-width-md {
+            height: $image_height_md;
+        }
+
+        @include min-width-xl {
+            height: $image_height_xl;
+        }
+    }
+}
+
+.slider__original {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider__modified {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.slider__border-selector {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    touch-action: pan-right pinch-zoom;
+}
+
+.border-selector__bar {
+    width: 100%;
+    height: 100%;
+    background-color: $secondary_color;
+    opacity: 0.6;
+}
+
+.border-selector__ball {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: $secondary_color;
+    border-radius: 99px;
+}
+
+.description {
+    padding: $content_padding_sm;
+
+    @include min-width-md {
+        padding: 0;
+    }
+
+    @include min-width-xl {
+        padding-top: 40px;
+    }
+}
+
+.description__text {
+    margin-bottom: 25px;
+
+    @include min-width-xl {
+        line-height: 1.4;
+        margin-bottom: 45px;
+    }
+
+    p {
+        margin-bottom: 20px;
+
+        @include min-width-xl {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.description__button {
+    font-weight: $medium_font_weight;
+    color: $secondary_color;
+    width: 100%;
+    background-color: $secondary_accent_color;
+    padding: 13px;
+    border: none;
+    cursor: pointer;
+
+    @include min-width-md {
+        width: auto;
+        padding: 12px 24px;
+    }
+
+    @include min-width-xl {
+        padding: 15px 30px;
+        font-size: $standard_font_size_xl;
+    }
+}
+
+.description__watermark-text {
+    display: none;
+
+    @include min-width-md {
+        display: block;
+        font-family: $secondary_font_family;
+        font-size: 130px;
+        position: absolute;
+        top: 55%;
+        left: 35%;
+        transform: translateY(-50%);
+        opacity: 0.04;
+        z-index: -1;
+    }
+
+    @include min-width-xl {
+        top: 47%;
+        left: 40%;
+        font-size: 160px;
+    }
+
+    p:nth-child(2) {
+        padding-left: 55px;
+
+        @include min-width-xl {
+            padding-left: 75px;
+        }
+    }
+}

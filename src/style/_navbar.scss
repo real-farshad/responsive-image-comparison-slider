@@ -1,8 +1,12 @@
+// the relative position and z-index places the
+// navbar for small screen on top of everything else
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px $content_padding_sm;
+    padding: 15px $content_padding_sm;
+    z-index: 99;
 
     @include min-width-md {
         padding: 25px $content_padding_md;
@@ -79,7 +83,7 @@
 }
 
 .navigation__link {
-    font-family: "Righteous", cursive;
+    font-family: $secondary_font_family;
     font-size: 24px;
     margin-bottom: 120px;
     transform: translateX(-50px);
