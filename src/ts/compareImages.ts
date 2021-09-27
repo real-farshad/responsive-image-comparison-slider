@@ -14,7 +14,7 @@ sliderBorder.addEventListener("mouseup", (): void => {
     slider.removeEventListener("mousemove", handleMouseMoveOnSlider);
 });
 
-function handleMouseMoveOnSlider(e: MouseEvent) {
+function handleMouseMoveOnSlider(e: MouseEvent): void {
     let borderOffsetY: number;
 
     // The eventlistener might return an event object on one of the child elements
