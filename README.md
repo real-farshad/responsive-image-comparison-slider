@@ -1,7 +1,7 @@
 # Responsive Image Comparison Slider
 
-Live demo: [responsive-image-comparison-slider-nine.vercel.app](https://responsive-image-comparison-slider-nine.vercel.app/)
+[Live Demo](https://responsive-image-comparison-slider-nine.vercel.app) • This is an image comparison web application. I used HTML, Sass, Typescript and Webpack to build it and followed a mobile first, component base methodology for development. You can move the bar in between the images to see before and after versions. Touch base gesture interactions also works for small screens and mobile devices. I implemented a responsive navbar with a hamburger menu for the mobile version as well.
 
-Tech stack: html, sass, typescript, webpack
+## Screenshots
 
-Mobile-first and component-base development. a slider to compare original and modified images by moving the bar in the middle. works also with touch input and stays responsive with resize. the navbar is responsive too.
+![Feature 1 Demo](src/assets/screenshot.png)
