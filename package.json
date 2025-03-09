@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "engines": {
-    "node": "21.x"
+    "node": "18.x"
   },
   "scripts": {
     "start": "webpack --config webpack.dev.js --watch",
